@@ -7,6 +7,6 @@ Build_A_Board
 
 ## WireFrames
 
-![alt text](/Users/moody/Downloads/20180103_163424.jpg)
+![Imgur](https://i.imgur.com/ZemUW8i.jpg)
 
-![alt text](/Users/moody/Downloads/20180103_163440.jpg)
+![Imgur](https://i.imgur.com/ljtVKrW.jpg)
