@@ -22,6 +22,36 @@ const DeckSchema = new Schema(
     }
 )
 
+const CompleteSchema = new Schema(
+    {
+        decks: [DeckSchema]
+
+    },
+    {
+        timestamps: {}
+    }
+)
+
+const UserSchema = new Schema(
+    {
+        name: {
+            type: String, 
+            required: [true, 'Name is required!']
+        },
+        stance: {
+            type: String, 
+            required: [true, 'Stance is required!']
+        },
+        myBoard: [CompleteSchema]
+    },
+    {
+        timestamps: {},
+        usePushEach: true
+    }
+)
+
 module.exports = {
-    DeckSchema
+    DeckSchema, 
+    CompleteSchema,
+    UserSchema
 }
