@@ -1,6 +1,6 @@
 require('dotenv').config()
 const User = require('./models/User')
-//const Store = require('./models/Store')
+const Complete = require('./models/Complete')
 const Deck = require('./models/Deck')
 const mongoose = require('mongoose')
 

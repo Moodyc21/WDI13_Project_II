@@ -11,6 +11,7 @@ const mongoose = require('mongoose')
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const deckController = require('./routes/deckController')
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/decks', deckController)
 
 
 //connect MongoDB
