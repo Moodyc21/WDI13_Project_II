@@ -148,6 +148,11 @@ const UserSchema = new Schema(
 
 module.exports = {
     DeckSchema,
+    TruckSchema,
+    WheelSchema, 
+    BearingSchema, 
+    GripTapeSchema, 
+    HardwareSchema, 
     CompleteSchema,
     UserSchema
 }

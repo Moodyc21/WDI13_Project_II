@@ -2,20 +2,23 @@
     <h1 class='userPagetitle'>
         Build-A-Board
     </h1>
+    <div class='userPic'>
+        <a href="https://imgur.com/3ggmLxE"><img src="https://i.imgur.com/3ggmLxE.jpg" title="source: imgur.com" />
+        </a>
+    </div>
 
-    <div class="stepper">
-        <a href="/users">Home</a> /
-        <a href="/users/{{userId}}">Profile</a> /
-        <a href="/users/{{userId}}/stores">Stores</a> /
-        <a href="/users/{{userId}}/stores/{{store._id}}">{{store.name}}</a> / New Gift
+    <div class="newUser">
+        <a href="/">Build</a> /
+        <a href="/users/{{userId}}">My Complete</a> 
     </div>
     <div class="userForm">
-        <form action="/users/{{userId}}" method="POST">
+        <form action="/users" method="POST">
             <h2>New User</h2>
             <div class="form-input">
                 <label for="name">Name</label>
                 <input type="text" name="name">
             </div>
+            <br>
             <div class="form-input">
                 <label for="stance">Stance</label>
                 <br>
@@ -25,12 +28,20 @@
                     <option value="goofy">Goofy</option>
                 </select>
             </div>
+            <br>
             <div class="button-container flex-end">
-                <input class="button primary" type="submit" value="Create Gift">
-                <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+                <input class="button primary" type="submit" value="Create User">
+                <a href="/users" class="button warning">Cancel</a>
             </div>
         </form>
     </div>
 
 
+</div>
+
+<div>
+    {{#each user}}
+    <h2>{{this.name}}</h2>
+
+    {{/each}}
 </div>

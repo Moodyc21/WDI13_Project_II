@@ -28,17 +28,6 @@ User.remove({}).then(() => {
     stance: 'goofy',
   })
 
-  const completeBoard = new Complete({
-
-  })
-  const realDeck = new Deck({
-    company: 'Real Skateboards',
-    size: '8',
-    shape: 'medium concave'
-  })
-  completeBoard.decks.push(realDeck)
-
-  bobby.myBoard.push(completeBoard)
 
   return bobby.save()
 }).then(() => {
@@ -46,14 +35,7 @@ User.remove({}).then(() => {
     name: 'Brian Kubis',
     stance: 'regular',
   })
-}).then((gob) => {
-  const completeBoard = new Complete({
-    
-  })
 
-  gob.myBoard.push(completeBoard)
-
-  return gob.save()
 }).catch((error) => {
   console.log('!!!!! ERROR SAVING SEEDED DATA !!!!!')
   console.log(error)
