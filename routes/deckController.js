@@ -11,4 +11,8 @@ router.get('/', function(req, res, next) {
   res.render('decks/index')
 })
 
+router.get('/show', function(req, res, next) {
+    res.render('decks/show')
+  })
+
 module.exports = router

@@ -1,27 +1,159 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1 id='titleOne'>{{title}}</h1>
+<p id='welcomeSign'>Welcome to {{title}}</p>
+<div class='wholeIndex'>
 
 
+    <div class='boardPic'>
+        <a href="/decks">
+            <img src="https://i.imgur.com/GbXrIkG.png" title="source: imgur.com" />
+            <h2>Decks</h2>
+        </a>
+        <div class="decksCard">
+            <form action="/users/{{userId}}/stores/{{store._id}}/gifts" method="POST">
+                <h2></h2>
+                <div class="form-input">
+                    <label for="company">Company</label>
+                    <input type="text" name="company">
+                </div>
+                <div class="form-input">
+                    <label for="size">Size</label>
+                    <input type="number" name="size">
+                </div>
+                <div class="form-input">
+                    <label for="shape">shape</label>
+                    <input type="text" name="shape">
+                </div>
+                <div class="button-container flex-end">
+                    <input class="button primary" type="submit" value="Add Deck">
+                    <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<div class='boardPic'>
-    <a href="/decks">
-        <img src="https://i.imgur.com/GbXrIkG.png" title="source: imgur.com" />
-        <h2>Decks</h2>
-    </a>
+    <div class='trucksPic'>
+        <a href="/trucks">
+            <img src="https://i.imgur.com/EgRW14w.png" title="source: imgur.com" />
+            <h2>Trucks</h2>
+        </a>
+        <div class="trucksCard">
+            <form action="/users/{{userId}}/stores/{{store._id}}/gifts" method="POST">
+                <h2></h2>
+                <div class="form-input">
+                    <label for="company">Company</label>
+                    <input type="text" name="company">
+                </div>
+                <div class="form-input">
+                    <label for="size">Size</label>
+                    <input type="number" name="size">
+                </div>
+                <div class="button-container flex-end">
+                    <input class="button primary" type="submit" value="Add Trucks">
+                    <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class='wheelsPic'>
+        <a href="/wheels">
+            <img src="https://i.imgur.com/chHUEVj.png" title="source: imgur.com" />
+            <h2>Wheels</h2>
+        </a>
+        <div class="wheelsCard">
+            <form action="/users/{{userId}}/stores/{{store._id}}/gifts" method="POST">
+                <h2></h2>
+                <div class="form-input">
+                    <label for="company">Company</label>
+                    <input type="text" name="company">
+                </div>
+                <div class="form-input">
+                    <label for="size">Size</label>
+                    <input type="number" name="size">
+                </div>
+                <div class="button-container flex-end">
+                    <input class="button primary" type="submit" value="Add Wheels">
+                    <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+
+    <div class='bearingsPic'>
+        <a href="/bearings">
+            <img src="https://i.imgur.com/nI5iWvv.jpg?1" title="source: imgur.com" />
+            <h2>Bearings</h2>
+        </a>
+        <div class="bearingsCard">
+            <form action="/users/{{userId}}/stores/{{store._id}}/gifts" method="POST">
+                <h2></h2>
+                <div class="form-input">
+                    <label for="company">Company</label>
+                    <input type="text" name="company">
+                </div>
+                <div class="form-input">
+                    <label for="abec">Abec</label>
+                    <input type="number" name="abec">
+                </div>
+                <div class="button-container flex-end">
+                    <input class="button primary" type="submit" value="Add Bearings">
+                    <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class='gripTapePic'>
+        <a href="/GripTape">
+            <img src="https://i.imgur.com/46nLd1j.jpg?1" title="source: imgur.com" />
+            <h2>Griptape</h2>
+        </a>
+        <div class="gripTapeCard">
+            <form action="/users/{{userId}}/stores/{{store._id}}/gifts" method="POST">
+                <h2></h2>
+                <div class="form-input">
+                    <label for="company">Company</label>
+                    <input type="text" name="company">
+                </div>
+                <div class="form-input">
+                    <label for="grit">Grit</label>
+                    <input type="text" name="grit">
+                </div>
+                <div class="button-container flex-end">
+                    <input class="button primary" type="submit" value="Add GripTape">
+                    <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class='hardwarePic'>
+        <a href="/hardware">
+            <img src="https://i.imgur.com/AoRLL3K.jpg?1" title="source: imgur.com" />
+            <h2>Hardware</h2>
+        </a>
+        <div class="hardwareCard">
+            <form action="/users/{{userId}}/stores/{{store._id}}/gifts" method="POST">
+                <h2></h2>
+                <div class="form-input">
+                    <label for="company">Company</label>
+                    <input type="text" name="company">
+                </div>
+                <div class="form-input">
+                    <label for="size">Size</label>
+                    <input type="number" name="size">
+                </div>
+                <div class="button-container flex-end">
+                    <input class="button primary" type="submit" value="Add Hardware">
+                    <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </div>
-
-
-
-<h2>Trucks</h2>
-
-
-<h2>Wheels</h2>
-
-
-<h2>Bearings</h2>
-
-
-<h2>Griptape</h2>
-
-
-<h2>Hardware</h2>

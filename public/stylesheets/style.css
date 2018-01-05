@@ -1,8 +1,44 @@
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.realBoards {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+}
+
+.busenitzBoard {
+  margin: 0 -60px;
+}
+.brainBoard {
+  margin: 0 -60px;
+}
+.chkBoard {
+  margin: 0 -60px;
+}
+.pantherBoard {
+  margin: 0 -60px;
+}
+
+.wholeIndex {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+
+}
+
+#welcomeSign {
+  display: flex;
+  justify-content: center;
+}
+
+#titleOne {
+  display: flex;
+  justify-content: center;
 }
