@@ -5,14 +5,14 @@ const User = require('../db/models/User')
 
 /* GET users listing. */
 // router.get('/', function (req, res, next) {
-//   res.render('user/new');
+//   res.render('user/index');
 // });
 
 
 router.get('/', (req, res, next) => {
   User.find({})
     .then((user) => {
-      res.render('user/new', {
+      res.render('user/index', {
         user
       })
 
