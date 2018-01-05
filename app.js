@@ -10,7 +10,7 @@ const mongoose = require('mongoose')
 
 
 const index = require('./routes/index');
-const users = require('./routes/users');
+const usersController = require('./routes/usersController');
 const deckController = require('./routes/deckController')
 
 const app = express();
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/users', usersController);
 app.use('/decks', deckController)
 
 

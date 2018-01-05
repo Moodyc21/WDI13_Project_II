@@ -9,13 +9,13 @@
             <h2>Decks</h2>
         </a>
         <div class="decksCard">
-            <form action="/users/{{userId}}/stores/{{store._id}}/gifts" method="POST">
+            <form action="/users/{{userId}}/myBoard/{{complete._id}}/decks" method="POST">
                 <h2></h2>
                 <div class="form-input">
 
                     <label for="company">Company</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Company" id="deckCompany">
                         <option value=""></option>
                         <option value="real">Real Skateboards</option>
                         <option value="baker">Baker</option>
@@ -27,7 +27,7 @@
                 <div class="form-input">
                     <label for="size">Size</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Size" id="deckSize">
                         <option value=""></option>
                         <option value="7.5">7.5</option>
                         <option value="7.8">7.8</option>
@@ -36,9 +36,9 @@
                     </select>
                 </div>
                 <div class="form-input">
-                    <label for="shape">shape</label>
+                    <label for="shape">Shape</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Shape" id="deckShape">
                         <option value=""></option>
                         <option value="sConcave">Short Concave</option>
                         <option value="mConcave">Medium Concave</option>
@@ -64,7 +64,7 @@
                 <div class="form-input">
                     <label for="company">Company</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Company" id="truckCompany">
                         <option value=""></option>
                         <option value="royal">Royal</option>
                         <option value="thunder">Thunder</option>
@@ -74,7 +74,7 @@
                 <div class="form-input">
                     <label for="size">Size</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Size" id="truckSize">
                         <option value=""></option>
                         <option value="129">129mm</option>
                         <option value="139">139mm</option>
@@ -101,7 +101,7 @@
                 <div class="form-input">
                     <label for="company">Company</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Company" id="wheelCompany">
                         <option value=""></option>
                         <option value="ricta">Ricta</option>
                         <option value="bones">Bones</option>
@@ -111,7 +111,7 @@
                 <div class="form-input">
                     <label for="size">Size</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Size" id="wheelSize">
                         <option value=""></option>
                         <option value="48">48mm</option>
                         <option value="52">52mm</option>
@@ -140,7 +140,7 @@
                 <div class="form-input">
                     <label for="company">Company</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Company" id="bearingCompany">
                         <option value=""></option>
                         <option value="boneSwiss">BoneSwiss</option>
                         <option value="lucky">Lucky</option>
@@ -150,7 +150,7 @@
                 <div class="form-input">
                     <label for="abec">Abec</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Abec" id="abecSize">
                         <option value=""></option>
                         <option value="3">3</option>
                         <option value="5">5</option>
@@ -177,7 +177,7 @@
                 <div class="form-input">
                     <label for="company">Company</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Company" id="gripCompany">
                         <option value=""></option>
                         <option value="mob">MOB</option>
                         <option value="jessup">Jessup</option>
@@ -187,7 +187,7 @@
                 <div class="form-input">
                     <label for="grit">Grit</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Grit" id="Grit">
                         <option value=""></option>
                         <option value="800">800(soft)</option>
                         <option value="500">500(coarse)</option>
@@ -213,7 +213,7 @@
                 <div class="form-input">
                     <label for="company">Company</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Company" id="hardwareCompany">
                         <option value=""></option>
                         <option value="lucky">Lucky</option>
                         <option value="independent">Independent</option>
@@ -223,7 +223,7 @@
                 <div class="form-input">
                     <label for="size">Size</label>
                     <br>
-                    <select name="Company" form="Company">
+                    <select name="Size" id="hardwareSize">
                         <option value=""></option>
                         <option value="7/8">7/8"</option>
                         <option value="1">1"</option>
@@ -231,7 +231,7 @@
                 </div>
                 <div class="button-container flex-end">
                     <input class="button primary" type="submit" value="Add Hardware">
-                    <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+                    <a href="/" class="button warning">Cancel</a>
                 </div>
             </form>
         </div>

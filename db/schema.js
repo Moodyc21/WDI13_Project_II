@@ -22,11 +22,107 @@ const DeckSchema = new Schema(
     }
 )
 
-const CompleteSchema = new Schema(
+const TruckSchema = new Schema(
     {
-        decks: [DeckSchema]
+        company: {
+            type: String,
+            required: [true, 'Deck company is required!']
+        },
+        size: {
+            type: Number
+        },
 
     },
+    {
+        timestamps: {}
+    }
+)
+
+const WheelSchema = new Schema(
+    {
+        company: {
+            type: String,
+            required: [true, 'Deck company is required!']
+        },
+        size: {
+            type: Number
+        },
+
+    },
+    {
+        timestamps: {}
+    }
+)
+
+const BearingSchema = new Schema(
+    {
+        company: {
+            type: String,
+            required: [true, 'Deck company is required!']
+        },
+        Abec: {
+            type: Number
+        },
+
+    },
+    {
+        timestamps: {}
+    }
+)
+
+const GripTapeSchema = new Schema(
+    {
+        company: {
+            type: String,
+            required: [true, 'Deck company is required!']
+        },
+        grit: {
+            type: Number
+        },
+
+    },
+    {
+        timestamps: {}
+    }
+)
+
+const HardwareSchema = new Schema(
+    {
+        company: {
+            type: String,
+            required: [true, 'Deck company is required!']
+        },
+        size: {
+            type: Number
+        },
+
+    },
+    {
+        timestamps: {}
+    }
+)
+
+const CompleteSchema = new Schema(
+    {
+        deck: DeckSchema
+    },
+    {
+        trucks: TruckSchema
+    },
+    {
+        wheels: WheelSchema
+    },
+    {
+        bearings: BearingSchema
+    },
+    {
+        gripTape: GripTapeSchema
+    },
+    {
+        hardware: HardwareSchema
+    },
+
+
     {
         timestamps: {}
     }
@@ -35,14 +131,14 @@ const CompleteSchema = new Schema(
 const UserSchema = new Schema(
     {
         name: {
-            type: String, 
+            type: String,
             required: [true, 'Name is required!']
         },
         stance: {
-            type: String, 
+            type: String,
             required: [true, 'Stance is required!']
         },
-        myBoard: [CompleteSchema]
+        myBoard: CompleteSchema
     },
     {
         timestamps: {},
@@ -51,7 +147,7 @@ const UserSchema = new Schema(
 )
 
 module.exports = {
-    DeckSchema, 
+    DeckSchema,
     CompleteSchema,
     UserSchema
 }

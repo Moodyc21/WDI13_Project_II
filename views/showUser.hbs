@@ -1,0 +1,36 @@
+<div class='userPage'>
+    <h1 class='userPagetitle'>
+        Build-A-Board
+    </h1>
+
+    <div class="stepper">
+        <a href="/users">Home</a> /
+        <a href="/users/{{userId}}">Profile</a> /
+        <a href="/users/{{userId}}/stores">Stores</a> /
+        <a href="/users/{{userId}}/stores/{{store._id}}">{{store.name}}</a> / New Gift
+    </div>
+    <div class="userForm">
+        <form action="/users/{{userId}}" method="POST">
+            <h2>New User</h2>
+            <div class="form-input">
+                <label for="name">Name</label>
+                <input type="text" name="name">
+            </div>
+            <div class="form-input">
+                <label for="stance">Stance</label>
+                <br>
+                <select name="stance" id="userStance">
+                    <option value=""></option>
+                    <option value="regular">Regular</option>
+                    <option value="goofy">Goofy</option>
+                </select>
+            </div>
+            <div class="button-container flex-end">
+                <input class="button primary" type="submit" value="Create Gift">
+                <a href="/users/{{userId}}/stores/{{store._id}}" class="button warning">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+
+</div>
