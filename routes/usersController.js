@@ -20,7 +20,7 @@ router.get('/', (req, res, next) => {
 
 })
 
-router.get('/show', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   res.render('user/show')
 
 })

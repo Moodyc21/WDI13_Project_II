@@ -1,12 +1,12 @@
 require('dotenv').config()
 const User = require('./models/User')
-// const Complete = require('./models/Complete')
-// const Deck = require('./models/Deck.js')
-// const Trucks = require('./models/Truck')
-// const Wheels = require('./models/Wheel')
-// const Bearings = require('./models/Bearing')
-// const GripTape = require('./models/Griptape')
-// const Hardware = require('./models/Hardware')
+const Complete = require('./models/Complete')
+const Deck = require('./models/Deck')
+const Trucks = require('./models/Truck')
+const Wheels = require('./models/Wheel')
+const Bearings = require('./models/Bearing')
+const GripTape = require('./models/Griptape')
+const Hardware = require('./models/Hardware')
 const mongoose = require('mongoose')
 
 // connect to database
@@ -27,84 +27,94 @@ mongoose.connection.on('error', (error) => {
 // Delete all users, then add some fake ones
 User.remove({}).then(() => {
 
-    // const bobsDeck = new Deck({
-    //     company: 'Real',
-    //     size: 8.0,
-    //     shape: 'mConcave'
-    // })
+    const bobby = new User({
+        name: 'Bob Murray',
+        stance: 'goofy',
+        photo: '',
+    })
+    const bobsCom = new Complete({
+        name: 'bobsBoard',
+    })
+    const bobsDeck = new Deck({
+        company: 'Real',
+        size: 8.0,
+        shape: 'mConcave'
+    })
+    
 
-    // const bobsTrucks = new Trucks({
-    //     company: 'Royal',
-    //     size: 139
-    // })
-    // const bobsWheels = new Wheels({
-    //     company: 'Bones',
-    //     size: 49
-    // })
-    // const bobsBearings = new Bearings({
-    //     company: 'Boneswiss',
-    //     abec: 7
-    // })
-    // const bobsGrip = new GripTape({
-    //     company: 'MOB',
-    //     grit: 800
-    // })
-    // const bobsHardware = new Hardware({
-    //     company: 'Lucky',
-    //     size: 1
-    // })
-    // const bobsCom = new Complete({
-    //     name: 'bobsBoard',
-    //     Deck: bobsDeck,
-    //     Trucks: bobsTrucks,
-    //     Wheels: bobsWheels,
-    //     Bearings: bobsBearings,
-    //     GripTape: bobsGrip,
-    //     Hardware: bobsHardware
+    const bobsTrucks = new Trucks({
+        company: 'Royal',
+        size: 139
+    })
+    
 
-    // })
+    const bobsWheels = new Wheels({
+        company: 'Bones',
+        size: 49
+    })
+    
+
+    const bobsBearings = new Bearings({
+        company: 'Boneswiss',
+        abec: 7
+    })
+    
+
+    const bobsGrip = new GripTape({
+        company: 'MOB',
+        grit: 800
+    })
+    
+
+    const bobsHardware = new Hardware({
+        company: 'Lucky',
+        size: 1
+    })
+    bobsCom.deck.push(bobsDeck)
+    bobsCom.trucks.push(bobsTrucks)
+    bobsCom.wheels.push(bobsWheels)
+    bobsCom.bearings.push(bobsBearings)
+    bobsCom.gripTape.push(bobsGrip)
+    bobsCom.hardware.push(bobsHardware)
+
+    bobby.myBoard.push(bobsCom)
+
+
 
     // const bobby = new User({
     //     name: 'Bob Murray',
     //     stance: 'goofy',
     //     photo: '',
-    //     myBoard: bobsCom
+    //     complete: [{
+    //         name: 'bobsBoard',
+    //         deck: [{
+    //             company: 'Real',
+    //             size: 8.0,
+    //             shape: 'mConcave'
+    //         }],
+    //         trucks: [{
+    //             company: 'Royal',
+    //             size: 139
+    //         }],
+    //         wheels: [{
+    //             company: 'Bones',
+    //             size: 49
+    //         }],
+    //         bearings: [{
+    //             company: 'Boneswiss',
+    //             abec: 7
+    //         }],
+    //         grip: [{
+    //             company: 'MOB',
+    //             grit: 800
+    //         }],
+    //         hardware: [{
+    //             company: 'Lucky',
+    //             size: 1
+    //         }]
+
+    //     }]
     // })
-
-    const bobby = new User({
-        name: 'Bob Murray',
-        stance: 'goofy',
-        photo: '',
-        complete: [{
-            name: 'bobsBoard',
-            deck: [{
-                company: 'Real',
-                size: 8.0,
-                shape: 'mConcave'
-            }],
-            trucks: [{
-                company: 'Royal',
-                size: 139
-            }],
-            wheels: [{
-                company: 'Bones',
-                size: 49
-            }],
-            bearings: [{
-                company: 'Boneswiss',
-                abec: 7
-            }],
-            grip: [{
-                company: 'MOB',
-                grit: 800
-            }],
-            hardware: [{
-                company: 'Lucky',
-                size: 1
-            }]
-
-        }]
-    })
 
     return bobby.save()
 
