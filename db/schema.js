@@ -19,11 +19,11 @@ const DeckSchema = new Schema(
     },
     {
         timestamps: {},
-        pushAll: true
+        
     }
 )
 
-const TruckSchema = new Schema(
+const TrucksSchema = new Schema(
     {
         company: {
             type: String,
@@ -36,11 +36,11 @@ const TruckSchema = new Schema(
     },
     {
         timestamps: {},
-        pushAll: true
+        
     }
 )
 
-const WheelSchema = new Schema(
+const WheelsSchema = new Schema(
     {
         company: {
             type: String,
@@ -53,11 +53,11 @@ const WheelSchema = new Schema(
     },
     {
         timestamps: {},
-        pushAll: true
+        
     }
 )
 
-const BearingSchema = new Schema(
+const BearingsSchema = new Schema(
     {
         company: {
             type: String,
@@ -70,7 +70,7 @@ const BearingSchema = new Schema(
     },
     {
         timestamps: {},
-        pushAll: true
+        
     }
 )
 
@@ -87,7 +87,7 @@ const GripTapeSchema = new Schema(
     },
     {
         timestamps: {},
-        pushAll: true
+       
     }
 )
 
@@ -104,7 +104,7 @@ const HardwareSchema = new Schema(
     },
     {
         timestamps: {},
-        pushAll: true
+        
     }
 )
 
@@ -113,28 +113,28 @@ const CompleteSchema = new Schema(
         name: String
     },
     {
-        deck: [DeckSchema]
+        theDeck: [DeckSchema]
     },
     {
-        trucks: [TruckSchema]
+        theTrucks: [TrucksSchema]
     },
     {
-        wheels: [WheelSchema]
+        theWheels: [WheelsSchema]
     },
     {
-        bearings: [BearingSchema]
+        theBearings: [BearingsSchema]
     },
     {
-        gripTape: [GripTapeSchema]
+        theGripTape: [GripTapeSchema]
     },
     {
-        hardware: [HardwareSchema]
+        theHardware: [HardwareSchema]
     },
 
 
     {
         timestamps: {},
-        pushAll: true
+        
     }
 )
 
@@ -156,7 +156,7 @@ const UserSchema = new Schema(
     },
     {
         timestamps: {},
-        pushAll: true
+        usePushEach: true
     }
 )
 
@@ -239,9 +239,9 @@ const UserSchema = new Schema(
 
 module.exports = {
     DeckSchema,
-    TruckSchema,
-    WheelSchema,
-    BearingSchema,
+    TrucksSchema,
+    WheelsSchema,
+    BearingsSchema,
     GripTapeSchema,
     HardwareSchema,
     CompleteSchema,
