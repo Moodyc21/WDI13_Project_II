@@ -1,0 +1,31 @@
+<div class='navLinks'>
+    <a href="/users"> Home </a> /
+    <a href="/users/{{userId}}"> Skater </a> /
+    <a href="/users/{{userId}}/skateShop"> SkateShop </a> / {{skateShop.name}}
+</div>
+
+<div class="skateShopTitle">
+    <div>
+        <h1>{{skateShop.name}}</h1>
+        <h3>{{skateShop.location}}</h3>
+    </div>
+    <a class="btn btn-warning" href="/users/{{userId}}/skateShop/{{skateShop._id}}/delete">Delete</a>
+</div>
+
+<div>
+    <div class="completeTitle">
+        <h3>Complete:</h3>
+        <a class="btn btn-primary" href="/users/{{userId}}/skateShop/{{skateShop._id}}/complete/new">Add a Complete</a>
+    </div>
+
+    <div class="completes">
+        {{#each skateShop.myComplete}}
+        <div class="complete">
+            <a href="/users/{{../userId}}/skateShop/{{../skateShop._id}}/complete/{{this._id}}">
+                {{this.name}}
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+</div>

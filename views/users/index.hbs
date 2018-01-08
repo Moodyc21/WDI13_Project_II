@@ -1,8 +1,25 @@
-<div>
-    {{#each user}}
-    <h2>{{this.name}}</h2>
-    <h3>{{this.stance}}</h3>
-    <h4>{{this.complete}}<h4>
+<div class='navLinks'>
+    Home
+</div>
+<div class="skaterContainer">
+    <div class="skaters">
+        {{#each users}}
+        <a href="/users/{{this._id}}" class="link skater">
+            <div class="skaterImage">
+                {{#if this.photoUrl}}
+                <img src="{{this.photoUrl}}" alt="{{this.name}}'s profile photo"> {{else}}
+                <img src="https://i.imgur.com/3ggmLxE.jpg" alt="{{this.name}}'s profile photo"> {{/if}}
+            </div>
+            <div class="skaterName">
+                {{this.name}}
+            </div>
+        </a>
+        {{/each}}
+    </div>
 
-    {{/each}}
+    <div class="btn btn-success">
+        <a href="/users/new">
+            New Skater
+        </a>
+    </div>
 </div>

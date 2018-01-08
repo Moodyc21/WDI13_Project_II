@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 
 <head>
-  <title>{{title}}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{pageTitle}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Righteous|Sedgwick+Ave+Display|Source+Code+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
@@ -12,7 +17,17 @@
 </head>
 
 <body>
-  {{{body}}}
+  <div class='navBar'>
+    
+      <a class='appTitle' href="/users">
+        <img src="https://i.imgur.com/3ggmLxEb.jpg?1" alt="Back to Home">   Build-A-Board  {{pageTitle}}
+      </a>
+
+  </div>
+
+  <div class='theBody'>
+    {{{body}}}
+  </div>
 
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

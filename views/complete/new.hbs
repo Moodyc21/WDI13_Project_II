@@ -1,0 +1,43 @@
+<div class='navLinks'>
+    <a href="/users"> Home </a> /
+    <a href="/users/{{userId}}"> Skater </a> /
+    <a href="/users/{{userId}}/skateShop"> SkateShop </a> /
+    <a href="/users/{{userId}}/skateShop/{{skateShop._id}}">{{skateShop.name}}</a> / New Complete
+</div>
+<div class="skaterForm">
+    <form action="/users/{{userId}}/skateShop/{{skateShop._id}}/complete" method="POST">
+        <h2>New Complete</h2>
+        <div class="form-input">
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+        </div>
+        <div class="form-input">
+            <label for="deck">Deck:</label>
+            <input type="text" name="deck">
+        </div>
+        <div class="form-input">
+            <label for="trucks">Trucks:</label>
+            <input type="text" name="trucks">
+        </div>
+        <div class="form-input">
+            <label for="wheels">Wheels:</label>
+            <input type="text" name="wheels">
+        </div>
+        <div class="form-input">
+            <label for="bearings">Bearings:</label>
+            <input type="text" name="bearings">
+        </div>
+        <div class="form-input">
+            <label for="gripTape">Griptape:</label>
+            <input type="text" name="gripTape">
+        </div>
+        <div class="form-input">
+            <label for="hardware">Hardware:</label>
+            <input type="text" name="hardware">
+        </div>
+        <div class="button-container flex-end">
+            <input class="btn btn-primary" type="submit" value="Create Complete">
+            <a href="/users/{{userId}}/skateShop/{{skateShop._id}}" class="btn btn-warning">Cancel</a>
+        </div>
+    </form>
+</div>

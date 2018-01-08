@@ -1,0 +1,28 @@
+<div class='navLinks'>
+    <a href="/users"> Home </a> /
+    <a href="/users/{{userId}}"> Skater </a> /
+    <a href="/users/{{userId}}/skateShop"> SkateShop </a> / New SkateShop
+</div>
+
+<div class="skaterForm">
+
+    <h2>Add A New SkateShop:</h2>
+    <div>
+        <form action="/users/{{userId}}/skateShop" method="POST">
+            <div class="form-input">
+                <label for="name">SkateShop Name:</label>
+                <input type="text" name="name" required>
+            </div>
+
+            <div class="form-input">
+                <label for="location">Location:</label>
+                <input type="text" name="location">
+            </div>
+
+            <div class="button-container flex-end">
+                <input class="btn btn-primary" type="submit" value="Create SkateShop">
+                <a href="/users/{{user._id}}" class="btn btn-warning">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

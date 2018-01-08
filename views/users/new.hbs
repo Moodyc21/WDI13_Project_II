@@ -1,41 +1,36 @@
-<div class='userPage'>
-    <h1 class='userPagetitle'>
-        Build-A-Board
-    </h1>
-    <div class='userPic'>
-        <a href="https://imgur.com/3ggmLxE"><img src="https://i.imgur.com/3ggmLxE.jpg" title="source: imgur.com" />
-        </a>
-    </div>
+<div class='navLinks'>
+    <a href="/users"> Home </a> / New Skater
+</div>
 
-    <div class="newUser">
-        <a href="/">Build</a> /
-        <a href="/users/{{userId}}">My Complete</a> 
-    </div>
-    <div class="userForm">
+<div class="skaterForm">
+
+    <h2>Skater Info</h2>
+    <div>
         <form action="/users" method="POST">
-            <h2>New User</h2>
             <div class="form-input">
                 <label for="name">Name</label>
-                <input type="text" name="name">
+                <input type="text" name="name" required/>
             </div>
-            <br>
+
+            <div class="form-input">
+                <label for="nickName">NickName</label>
+                <input type="text" name="nickName" />
+            </div>
+
             <div class="form-input">
                 <label for="stance">Stance</label>
-                <br>
-                <select name="stance" id="userStance">
-                    <option value=""></option>
-                    <option value="regular">Regular</option>
-                    <option value="goofy">Goofy</option>
-                </select>
+                <input type="text" name="stance" required/>
             </div>
-            <br>
+
+            <div class="form-input">
+                <label for="photoUrl">Photo Url</label>
+                <input type="text" name="photoUrl" />
+            </div>
+
             <div class="button-container flex-end">
-                <input class="button primary" type="submit" value="Create User">
-                <a href="/users" class="button warning">Cancel</a>
+                <input class="btn btn-primary" type="submit" value="Create Skater">
+                <a href="/users" class="btn btn-warning">Cancel</a>
             </div>
         </form>
     </div>
-
-
 </div>
-

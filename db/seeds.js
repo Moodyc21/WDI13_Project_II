@@ -1,12 +1,7 @@
 require('dotenv').config()
 const User = require('./models/User')
+const SkateShop = require('./models/SkateShop')
 const Complete = require('./models/Complete')
-const Deck = require('./models/Deck')
-const Trucks = require('./models/Trucks')
-const Wheels = require('./models/Wheels')
-const Bearings = require('./models/Bearings')
-const GripTape = require('./models/Griptape')
-const Hardware = require('./models/Hardware')
 const mongoose = require('mongoose')
 
 // connect to database
@@ -26,97 +21,31 @@ mongoose.connection.on('error', (error) => {
 
 // Delete all users, then add some fake ones
 User.remove({}).then(() => {
-
-    const bobby = new User({
-        name: 'Bob Murray',
-        stance: 'goofy',
-        photo: '',
+    const bastien = new User({
+        name: 'Bastien Salabanzi',
+        nickName: 'Twinkle Toes',
+        stance: 'Goofy',
+        photoUrl: 'https://i.imgur.com/WSOJyR1.jpg'
     })
-    const bobsCom = new Complete({
-        name: 'bobsBoard',
+
+    const primitive = new SkateShop({
+        name: 'Primitive SkateShop',
+        location: 'Encino, CA'
     })
-    const bobsDeck = new Deck({
-        company: 'Real',
-        size: 8.0,
-        shape: 'mConcave'
+    const bastienBoard = new Complete({
+        name: 'Bastiens Board',
+        deck: 'Primitive',
+        trucks: 'Theeve',
+        wheels: 'Type-s',
+        bearings: 'BoneSwiss',
+        gripTape: 'Soulijah',
+        hardware: 'Independent',
     })
-    
+    primitive.myComplete.push(bastienBoard)
 
-    const bobsTrucks = new Trucks({
-        company: 'Royal',
-        size: 139
-    })
-    
+    bastien.shops.push(primitive)
 
-    const bobsWheels = new Wheels({
-        company: 'Bones',
-        size: 49
-    })
-    
-
-    const bobsBearings = new Bearings({
-        company: 'Boneswiss',
-        abec: 7
-    })
-    
-
-    const bobsGrip = new GripTape({
-        company: 'MOB',
-        grit: 800
-    })
-    
-
-    const bobsHardware = new Hardware({
-        company: 'Lucky',
-        size: 1
-    })
-    bobsCom.theDeck.push(bobsDeck)
-    bobsCom.theTrucks.push(bobsTrucks)
-    bobsCom.theWheels.push(bobsWheels)
-    bobsCom.theBearings.push(bobsBearings)
-    bobsCom.theGripTape.push(bobsGrip)
-    bobsCom.theHardware.push(bobsHardware)
-
-    bobby.myBoard.push(bobsCom)
-
-
-
-    // const bobby = new User({
-    //     name: 'Bob Murray',
-    //     stance: 'goofy',
-    //     photo: '',
-    //     complete: [{
-    //         name: 'bobsBoard',
-    //         deck: [{
-    //             company: 'Real',
-    //             size: 8.0,
-    //             shape: 'mConcave'
-    //         }],
-    //         trucks: [{
-    //             company: 'Royal',
-    //             size: 139
-    //         }],
-    //         wheels: [{
-    //             company: 'Bones',
-    //             size: 49
-    //         }],
-    //         bearings: [{
-    //             company: 'Boneswiss',
-    //             abec: 7
-    //         }],
-    //         grip: [{
-    //             company: 'MOB',
-    //             grit: 800
-    //         }],
-    //         hardware: [{
-    //             company: 'Lucky',
-    //             size: 1
-    //         }]
-
-    //     }]
-    // })
-
-    return bobby.save()
+    return bastien.save()
 
 }).catch((error) => {
     console.log('!!!!! ERROR SAVING SEEDED DATA !!!!!')

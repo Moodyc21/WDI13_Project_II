@@ -43,10 +43,10 @@ mongoose.connection.once('open', function () {
   console.log("Mongoose has connected to MongoDB!")
 })
 
-const index = require('./routes/index')
-app.use('/', index)
+// const index = require('./routes/index')
+// app.use('/', index)
 const usersController = require('./routes/usersController')
-app.use('/users', userController)
+app.use('/users', usersController)
 const skateShopController = require('./routes/skateShopController')
 app.use('/users/:userId/skateShop', skateShopController)
 const completeController = require('./routes/completeController')

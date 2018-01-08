@@ -1,0 +1,23 @@
+<div class='navLinks'>
+    <a href="/users"> Home </a> /
+    <a href="/users/{{userId}}"> Skater </a> /
+    <a href="/users/{{userId}}/skateShop"> SkateShops </a> /
+    <a href="/users/{{userId}}/skateShop/{{skateShop._id}}">{{skateShop.name}}</a> / Complete
+</div>
+
+
+<div class="container">
+    <div>
+        <img src="https://i.imgur.com/GbXrIkG.png?1" alt="placeholder">
+    </div>
+    <div class="skaterInfo">
+        <h1>{{complete.name}}</h1>
+        <div>Deck: {{complete.deck}}</div>
+        <div>Trucks: {{complete.trucks}}</div>
+        <div>Wheels: {{complete.wheels}}</div>
+        <div>Bearings: {{complete.bearings}}</div>
+        <div>Griptape: {{complete.gripTape}}</div>
+        <div>Hardware: {{complete.hardware}}</div>
+        <a class="btn btn-warning" href="/users/{{userId}}/skateShop/{{skateShop._id}}/complete/{{complete._id}}/delete">Delete</a>
+    </div>
+</div>
