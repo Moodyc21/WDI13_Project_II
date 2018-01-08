@@ -10,11 +10,6 @@ const mongoose = require('mongoose')
 const methodOverride = require("method-override")
 const hbs = require("hbs")
 
-
-const index = require('./routes/index')
-const usersController = require('./routes/usersController')
-const deckController = require('./routes/deckController')
-
 const app = express()
 
 
@@ -31,11 +26,6 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(methodOverride("_method"))
 
-app.use('/', index)
-app.use('/users', usersController)
-app.use('/decks', deckController)
-
-
 //connect MongoDB
 mongoose.Promise = global.Promise
 if (process.env.MONGODB_URI) {
@@ -44,28 +34,37 @@ if (process.env.MONGODB_URI) {
 else {
   mongoose.connect('mongodb://localhost/completeBoard')
 }
-mongoose.connection.on('error', function(err) {
+mongoose.connection.on('error', function (err) {
   console.error('MongoDB connection error: ' + err)
   process.exit(-1)
-  }
+}
 )
-mongoose.connection.once('open', function() {
+mongoose.connection.once('open', function () {
   console.log("Mongoose has connected to MongoDB!")
 })
+
+const index = require('./routes/index')
+app.use('/', index)
+const usersController = require('./routes/usersController')
+app.use('/users', userController)
+const skateShopController = require('./routes/skateShopController')
+app.use('/users/:userId/skateShop', skateShopController)
+const completeController = require('./routes/completeController')
+app.use('/users/:userId/skateShop/:skateShopId/complete', completeController)
 
 app.get('/', (req, res) => {
   res.redirect('/users')
 })
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   const err = new Error('Not Found')
   err.status = 404
   next(err)
 })
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
