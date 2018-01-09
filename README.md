@@ -11,7 +11,7 @@ Build_A_Board
 (https://generalassembly.zoom.us/j/934807378)
 
 ## Portfolio
-(christophermoody.net)
+(https://christophermoody.net)
 
 ## ERD
 [ERD](https://i.imgur.com/ISDF0FR.png)
