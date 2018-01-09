@@ -11,7 +11,7 @@ Build_A_Board
 (christophermoody.net)
 
 ## ERD
-[ERD](https://i.imgur.com/ISDF0FRb.png)
+[ERD](https://i.imgur.com/ISDF0FR.png)
 
 ## Technologies
 - Bootstrap
@@ -28,6 +28,6 @@ Build_A_Board
 
 ## WireFrames
 
-[Wireframe 1](https://i.imgur.com/ljtVKrWb.jpg)
+[Wireframe 1](https://i.imgur.com/ljtVKrW.jpg)
 
-[Wireframe 2](https://i.imgur.com/ZemUW8ib.jpg)
+[Wireframe 2](https://i.imgur.com/ZemUW8i.jpg)
