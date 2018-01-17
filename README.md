@@ -8,7 +8,7 @@ Build_A_Board
 (https://trello.com/b/QT67cSSr/wdi13-project-ii)
 
 ## Link to Heroku
-(https://generalassembly.zoom.us/j/934807378)
+(https://mighty-caverns-89438.herokuapp.com/users)
 
 ## Portfolio
 (https://christophermoody.net)
